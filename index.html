@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="title">
-        <h1 class="title">Expense Tracker </h1>
+      <h1 class="title">Expense Tracker</h1>
     </header>
 
     <section class="content">
-        <h3 class="secondTitle">Add a new Expense:</h3>
-        <div class="form">
-            <form id="expForm">
-                <div class="formLine left grid-a">
-                    <span>Type:</span>
+      <h3 class="secondTitle">Add a new Expense:</h3>
+      <div class="form">
+        <form id="expForm">
+          <div class="formLine left grid-a">
+            <span for="type">Type:</span>
 
-                    <select name="" id="">
-                        <option value="">Payment Methods</option>
-                        <option value="">Card</option>
-                        <option value="">Cash</option>
-                        <option value="">Other</option>
-                    </select>
-                </div>
+            <select name="" id="type">
+              <option value="">Payment Methods</option>
+              <option value="">Card</option>
+              <option value="">Cash</option>
+              <option value="">Other</option>
+            </select>
+          </div>
 
-                <div class="formLine right grid-b">
-                    <span>Name:</span>
-                    <input type="text">
-                </div>
+          <div class="formLine right grid-b">
+            <span for="name">Name:</span>
+            <input type="text" id="name"/>
+          </div>
 
-                <div class="formLine left grid-c">
-                    <span>Date:</span>
-                    <input type="date">
-                </div>
+          <div class="formLine left grid-c">
+            <span for="date">Date:</span>
+            <input type="date"  id="date"/>
+          </div>
 
-                <div class="formLine right grid-d">
-                    <span for="amout">Amount:</span>
-                    <input type="text">
-                </div>
+          <div class="formLine right grid-d">
+            <span for="amount">Amount:</span>
+            <input type="text" id="amount"/>
+          </div>
 
-                <button class="buttonSave myButton"> submit </button>
-            </form>
-        </div>
+          <button type="submit" class="submit myButton">submit</button>
+        </form>
+      </div>
     </section>
-
 
     <section class="content">
-        <table class="table">
-            <thead>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+
+        <tbody id="expensetable">
+          <!-- 🍉js로 만들 것
                 <tr>
-                    <th>Type</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Options</th>
-                </tr>
-            </thead>
-
-            <tbody id="expensetable"></tbody>
-        </table>
-
-
-
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>                    
+                </tr> -->
+        </tbody>
+      </table>
     </section>
-    
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

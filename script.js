@@ -17,3 +17,18 @@
 🌊 다음에 할거
 
  */
+
+// 🍀 let, const
+
+const submit = document.querySelector('.submit');
+
+
+// 🍀 selectors
+
+
+
+// 🍀 event Listeners
+
+// 🍀 functions 
+
+  
