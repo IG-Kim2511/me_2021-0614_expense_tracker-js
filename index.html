@@ -16,8 +16,8 @@
     <section class="content">
         <h3 class="secondTitle">Add a new Expense:</h3>
         <div class="form">
-            <form action="">
-                <div class="formLine left">
+            <form id="expForm">
+                <div class="formLine left grid-a">
                     <span>Type:</span>
 
                     <select name="" id="">
@@ -28,25 +28,26 @@
                     </select>
                 </div>
 
-                <div class="formLine right">
+                <div class="formLine right grid-b">
                     <span>Name:</span>
                     <input type="text">
                 </div>
 
-                <div class="formLine left">
+                <div class="formLine left grid-c">
                     <span>Date:</span>
                     <input type="date">
                 </div>
 
-                <div class="formLine right">
+                <div class="formLine right grid-d">
                     <span for="amout">Amount:</span>
                     <input type="text">
                 </div>
 
-                <button class="buttonSave">Add Brand New Expense</button>
+                <button class="buttonSave myButton"> submit </button>
             </form>
         </div>
     </section>
+
 
     <section class="content">
         <table class="table">
@@ -62,6 +63,7 @@
 
             <tbody id="expensetable"></tbody>
         </table>
+
 
 
     </section>
