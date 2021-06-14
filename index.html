@@ -13,6 +13,53 @@
         <h1 class="title">Expense Tracker </h1>
     </header>
 
+    <section class="content">
+        <h3 class="sectonTitle">Add a new Expense:</h3>
+        <div class="form">
+            <form action="">
+                <div class="formLine left">
+                    <span>Type:</span>
+
+                    <select name="" id="">
+                        <option value="">Payment Methods</option>
+                        <option value="">Card</option>
+                        <option value="">Cash</option>
+                        <option value="">Other</option>
+                    </select>
+                </div>
+
+                <div class="formLine rght">
+                    <span>Name:</span>
+                    <input type="text">
+                </div>
+
+                <div class="formLine right">
+                    <span for="amout">Amount:</span>
+                    <input type="text">
+                </div>
+
+                <button class="buttonSave">Add Brand New Expense</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+
+            <tbody id="expensetable"></tbody>
+        </table>
+
+
+    </section>
     
     <script src="script.js"></script>
 </body>
