@@ -42,36 +42,48 @@ const options = document.querySelector('#options');
 // 🍀 value
 
 let typeValue =  [];
+let namedValue =  [];
+let dateValue = [];
+let amountValue =  [];
+let optionsValue =  [];
+
+function values(a,b) {
+    a.addEventListener("change", function() {
+        let input = this.value;    
+        b.push(input);
+    });
+}
+values(type, typeValue);
+values(named, namedValue);
+values(date, dateValue);
+values(amount, amountValue);
+values(options, optionsValue);
+
+/*⚽ hard-coding
 type.addEventListener("change", function() {
     let input = this.value;    
-    console.log(input); 
-    
     typeValue.push(input);
 });
 
-let namedValue =  [];
 named.addEventListener("change", function() {
     let input = this.value;      
     namedValue.push(input);
 });
 
-let dateValue = [];
 date.addEventListener("change", function() {
     let input = this.value;
     dateValue.push(input);
 });
 
-let amountValue =  [];
 amount.addEventListener("change", function() {
     let input = this.value;      
     amountValue.push(input);
 });
 
-let optionsValue =  [];
 options.addEventListener("change", function() {
     let input = this.value;      
     optionsValue.push(input);
-});
+}); */
 
 
 // 🍀js 8. submit
