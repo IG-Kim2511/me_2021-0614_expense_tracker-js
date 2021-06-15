@@ -21,6 +21,7 @@
 
 const submit = document.querySelector('.submit');
 const expenseTable = document.querySelector('#expensetable');
+const expForm = document.querySelector('#expForm');
 
 const type = document.querySelector('#type');
 const named = document.querySelector('#named');
@@ -29,7 +30,16 @@ const amount = document.querySelector('#amount');
 const options = document.querySelector('#options');
 
 
-// 🍀 let... value
+/* 🍉js 6.
+ 1 click,
+ 2 value of input....take
+ 3 create element on table
+ 4. put values in element 
+ 5. clear values
+ */
+
+
+// 🍀 value
 
 let typeValue =  [];
 type.addEventListener("change", function() {
@@ -48,9 +58,6 @@ named.addEventListener("change", function() {
 let dateValue = [];
 date.addEventListener("change", function() {
     let input = this.value;
-    let dateEntered = new Date(input);
-    console.log(input); //e.g. 2015-11-13
-
     dateValue.push(input);
 });
 
@@ -67,27 +74,12 @@ options.addEventListener("change", function() {
 });
 
 
-/* 🍉js 6.
- 1 click,
- 2 value of input....take
- 3 create element on table
- 4. put values in element 
- */
-
-// 🍀 selectors
-
-// 🍀 event Listeners
+// 🍀js 8. submit
 
 submit.addEventListener('click',expense)
 
-// 🍀 functions 
-
-// let tdInner = [];
-
 function expense(e) {
     e.preventDefault();    
-
-    //2 value taking    
 
     // 3 create element on table
     let tr = document.createElement('tr');    
@@ -113,11 +105,38 @@ function expense(e) {
     tr.append(td);
     td.innerHTML = `${optionsValue}`;
 
+    let btn = document.createElement('button'); 
+    btn.className='delete'
+    btn.className='myButton'
+    tr.append(btn);
+    btn.innerHTML = `delete`;
+
+
+    // delete button
+    btn.addEventListener('click',(e)=>{
+            e.target.parentNode.remove();   
+    });
+        
+    // initiate();
+}
+
+//🍀 js.16. deleteAll button
+
+const deleteAll= document.querySelector(".delete_all");
+
+deleteAll.addEventListener('click',clearAll);
+
+function clearAll() {
+    location.reload();    
+}
+
+/* 
+function initiate() {
     // typeValue = [PaymentMethods];
-    // namedValue = "";
+    // namedValue = [];
     // dateValue = '';
     // amountValue = '';
     // optionsValue = '';
-}
+    
+} */
 
-  
