@@ -90,8 +90,19 @@ values(options, optionsValue);
 
 // 🍀js 8. submit
 
-
 submit.addEventListener('click',expense)
+
+submit.addEventListener('keypress', (e)=> {
+    if (e.key==='enter') {
+        expense;        
+    }    
+})
+
+/* todoInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        todolist();
+    }
+}); */
 
  function expense(e) {
     e.preventDefault();    
