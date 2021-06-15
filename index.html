@@ -20,26 +20,35 @@
             <span for="type">Type:</span>
 
             <select name="" id="type">
-              <option value="">Payment Methods</option>
-              <option value="">Card</option>
-              <option value="">Cash</option>
-              <option value="">Other</option>
+              <!-- 🍉js 6-2
+                     select, option의 value 얻기 :
+                    html코딩에 value값을 넣어줌
+                -->
+              <option value="PaymentMethods">Payment Methods</option>
+              <option value="Card">Card</option>
+              <option value="Cash">Cash</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
           <div class="formLine right grid-b">
-            <span for="name">Name:</span>
-            <input type="text" id="name"/>
+            <span for="named">Name:</span>
+            <input type="text" id="named" />
           </div>
 
           <div class="formLine left grid-c">
             <span for="date">Date:</span>
-            <input type="date"  id="date"/>
+            <input type="date" id="date" />
           </div>
 
           <div class="formLine right grid-d">
             <span for="amount">Amount:</span>
-            <input type="text" id="amount"/>
+            <input type="text" id="amount" />
+          </div>
+
+          <div class="formLine right grid-d">
+            <span for="Options">Options:</span>
+            <input type="text" id="options" />
           </div>
 
           <button type="submit" class="submit myButton">submit</button>
@@ -73,5 +82,10 @@
     </section>
 
     <script src="script.js"></script>
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+  crossorigin="anonymous"></script>
   </body>
 </html>
