@@ -75,10 +75,12 @@ let optionsValue =  [];
 let empty =[];
 
 function values(a,b) {
+
     a.addEventListener("change", function() {
         let input = this.value;    
         b.push(input);
     });
+   
 }
 
 values(type, typeValue);
@@ -104,61 +106,68 @@ submit.addEventListener('keypress', (e)=> {
     }
 }); */
 
+// 🍀js 10. submit-expense : when value is not empty.
+
  function expense(e) {
     e.preventDefault();    
 
-    // 3 create element on table
-    let tr = document.createElement('tr');    
-    expenseTable.append(tr);
+    // 🦄namedValue.length > 0
+    
+    if (namedValue.length > 0 || amountValue.length > 0) {
+        // 3 create element on table
+        let tr = document.createElement('tr');    
+        expenseTable.append(tr);
 
-    /* ⚽ (hard-coding)
-        td = document.createElement('td');     
+        /* ⚽ (hard-coding)
+            td = document.createElement('td');     
+            tr.append(td);
+            td.innerHTML = `${namedValue}`;
+            
+            td = document.createElement('td');     
+            tr.append(td);
+            td.innerHTML = `${dateValue}`;
+            
+            td = document.createElement('td');     
+            tr.append(td);
+            td.innerHTML = `${amountValue}`;
+            
+            td = document.createElement('td');     
+            tr.append(td);
+            td.innerHTML = `${optionsValue}`; */
+
+        let td = document.createElement('td');   
         tr.append(td);
-        td.innerHTML = `${namedValue}`;
-        
-        td = document.createElement('td');     
-        tr.append(td);
-        td.innerHTML = `${dateValue}`;
-        
-        td = document.createElement('td');     
-        tr.append(td);
-        td.innerHTML = `${amountValue}`;
-        
-        td = document.createElement('td');     
-        tr.append(td);
-        td.innerHTML = `${optionsValue}`; */
+        td.innerHTML = `${typeValue}`;
 
-    let td = document.createElement('td');   
-    tr.append(td);
-    td.innerHTML = `${typeValue}`;
+        createElement(namedValue);
+        createElement(dateValue);
+        createElement(amountValue);
+        createElement(optionsValue);
 
-    createElement(namedValue);
-    createElement(dateValue);
-    createElement(amountValue);
-    createElement(optionsValue);
+        function createElement(a) {
+            td = document.createElement('td');     
+            tr.append(td);
+            td.innerHTML = a;   
+        }       
 
-    function createElement(a) {
-        td = document.createElement('td');     
-        tr.append(td);
-        td.innerHTML = a;   
-    }       
+        let btn = document.createElement('button'); 
+        btn.className='delete'
+        btn.className='myButton'
+        tr.append(btn);
+        btn.innerHTML = `delete`;    
+    
+        // delete button
+        btn.addEventListener('click',(e)=>{
+                e.target.parentNode.remove();   
+        });
 
-    let btn = document.createElement('button'); 
-    btn.className='delete'
-    btn.className='myButton'
-    tr.append(btn);
-    btn.innerHTML = `delete`;    
-  
-    // delete button
-    btn.addEventListener('click',(e)=>{
-            e.target.parentNode.remove();   
+        /* 🦄reset();
+        각 value를 reset하는건 안통함. 전체 form을 reset해야함    */
 
-    });
-
-    /* 🦄reset();
-    각 value를 reset하는건 안통함. 전체 form을 reset해야함    */
-
-    expForm.reset();     
+        expForm.reset();             
+    } else {
+        return null;        // 🦄return null
+    }
 }
 
 //🍀 js.18. reset
