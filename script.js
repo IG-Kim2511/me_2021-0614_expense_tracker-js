@@ -1,21 +1,4 @@
 "use strict";
-/* 
-🦄🚀 🍄🍉 🐞🌊  ⚡👻🐳  
-⚽🏓🎯 💊🩸🧲  📌    
-👉👇👆⚾❌⭕ 
-💋🌀🎈 🎃🎨⚽ 🏓🎯 💊🩸🧲 📌 🍓🍅🍈 🍀 🔥
-
-⚽ 🎯 🍀 섹터 나눔 마크
-🍉 js-6
-
-🦄 point, 알아낸것
-🚀 공식 (알고리즘 상위호환)
-🍄 Algorithm)  알고리즘 (코딩 순서, 소프트코딩)
-📌⚡ 중요사항
-
-🐞 bug
-🌊 다음에 할거
- */
 
 // 🍀 const
 
@@ -111,52 +94,71 @@ submit.addEventListener('keypress', (e)=> {
  function expense(e) {
     e.preventDefault();    
 
-    // 🦄namedValue.length > 0
-    
+    // 🦄namedValue.length > 0 :: array가 empty 인지 아닌지 확인할때 .length 사용
+
     if (namedValue.length > 0 || amountValue.length > 0) {
-        // 3 create element on table
-        let tr = document.createElement('tr');    
-        expenseTable.append(tr);
+        // 3🍈 create element tr,td on table
+        
+        // 💊  way-1 하나하나 create
+        // let tr = document.createElement('tr');    
+        // expenseTable.append(tr);
 
-        /* ⚽ (hard-coding)
-            td = document.createElement('td');     
-            tr.append(td);
-            td.innerHTML = `${namedValue}`;
+        // /* ⚽ (hard-coding)
+        //     td = document.createElement('td');     
+        //     tr.append(td);
+        //     td.innerHTML = `${namedValue}`;
             
-            td = document.createElement('td');     
-            tr.append(td);
-            td.innerHTML = `${dateValue}`;
+        //     td = document.createElement('td');     
+        //     tr.append(td);
+        //     td.innerHTML = `${dateValue}`;
             
-            td = document.createElement('td');     
-            tr.append(td);
-            td.innerHTML = `${amountValue}`;
+        //     td = document.createElement('td');     
+        //     tr.append(td);
+        //     td.innerHTML = `${amountValue}`;
             
-            td = document.createElement('td');     
-            tr.append(td);
-            td.innerHTML = `${optionsValue}`; */
+        //     td = document.createElement('td');     
+        //     tr.append(td);
+        //     td.innerHTML = `${optionsValue}`; */
 
-        let td = document.createElement('td');   
-        tr.append(td);
-        td.innerHTML = `${typeValue}`;
+        // ⚽ (soft-coding)
+        // let td = document.createElement('td');   
+        // tr.append(td);
+        // td.innerHTML = `${typeValue}`;
 
-        createElement(namedValue);
-        createElement(dateValue);
-        createElement(amountValue);
-        createElement(optionsValue);
+        // createElement(namedValue);
+        // createElement(dateValue);
+        // createElement(amountValue);
+        // createElement(optionsValue);
 
-        function createElement(a) {
-            td = document.createElement('td');     
-            tr.append(td);
-            td.innerHTML = a;   
-        }       
+        // function createElement(a) {
+        //     td = document.createElement('td');     
+        //     tr.append(td);
+        //     td.innerHTML = a;   
+        // }             
 
+        // 💊  way-2 ``문법으로 한번에 간단하게
+        let tr = document.createElement('tr');
+        tr.classList.add('tr_ui');
+        
+        tr.innerHTML = `
+            <td class='td_ui'>${typeValue}</td>
+            <td class='td_ui'>${namedValue}</td>
+            <td class='td_ui'>${dateValue}</td>
+            <td class='td_ui'>${amountValue}</td>
+            <td class='td_ui'>${optionsValue}</td>                  
+        `;
+        expenseTable.append(tr); 
+        
+        // button
         let btn = document.createElement('button'); 
         btn.className='delete'
         btn.className='myButton'
         tr.append(btn);
-        btn.innerHTML = `delete`;    
+        btn.innerHTML = `delete`;     
+
     
         // delete button
+   
         btn.addEventListener('click',(e)=>{
                 e.target.parentNode.remove();   
         });
