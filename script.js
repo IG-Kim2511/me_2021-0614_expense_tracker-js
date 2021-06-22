@@ -101,6 +101,7 @@ submit.addEventListener('keypress', (e)=> {
         
         // 💊  way-1 하나하나 create
         // let tr = document.createElement('tr');    
+        // tr.className = "classname_tr";
         // expenseTable.append(tr);
 
         // /* ⚽ (hard-coding)
