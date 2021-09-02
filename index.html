@@ -4,82 +4,82 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🍀Expense Tracker</title>  
+    <title>🍀Expense Tracker</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
     <div class="container_one">
+      <header class="title">
+        <h1 class="title">Expense Tracker</h1>
+      </header>
 
-    <header class="title">
-      <h1 class="title">Expense Tracker</h1>
-    </header>
+      <!-- 🦄form, label, for , id -->
+      <section class="content">
+        <h3 class="secondTitle">Add a new Expense:</h3>
+        <div class="form">
+          <form id="expForm">
+            <div class="formLine left grid-a">
+              <label for="type">Type:</label>
 
-    <section class="content">
-      <h3 class="secondTitle">Add a new Expense:</h3>
-      <div class="form">
-        <form id="expForm">
-          <div class="formLine left grid-a">
-
-            <!-- 🦄label, for , id -->
-            <label for="type">Type:</label>
-
-            <select name="" id="type">
-              <!-- 🍉js 6-2
+              <select name="" id="type">
+                <!-- 🍉js 6-2
                      select, option의 value 얻기 :
                     html코딩에 value값을 넣어줌
                 -->
-              <option value="PaymentMethods">Payment Methods</option>
-              <option value="Card">Card</option>
-              <option value="Cash">Cash</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
+                <option value="PaymentMethods">Payment Methods</option>
+                <option value="Card">Card</option>
+                <option value="Cash">Cash</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
 
-          <div class="formLine right grid-b">            
-            <label for="named">Name:</label>
-            <input type="text" id="named" />
-          </div>
+            <div class="formLine right grid-b">
+              <label for="named">Name:</label>
+              <input type="text" id="named" />
+            </div>
 
-          <div class="formLine left grid-c">
-            <label for="date">Date:</label>
-            <input type="date" id="date" />
-          </div>
+            <div class="formLine left grid-c">
+              <label for="date">Date:</label>
+              <input type="date" id="date" />
+            </div>
 
-          <div class="formLine right grid-d">
-            <label for="amount">Amount:</label>
-            <input type="text" id="amount" />
-          </div>
+            <div class="formLine right grid-d">
+              <label for="amount">Amount:</label>
+              <input type="text" id="amount" />
+            </div>
 
-          <div class="formLine right grid-d">
-            <label for="options">Options:</label>
-            <input type="text" id="options" />
-          </div>
+            <div class="formLine right grid-e">
+              <label for="options">Options:</label>
+              <input type="text" id="options" />
+            </div>  
 
-          
-          <!-- 🍀js 8.  -->
+            <div class="formLine right grid-f">
+              <!-- 🍀js 18.  -->   
+              <button type="reset" class="reset myButton">reset</button>
+            </div> 
+          </form>
+
+              <!-- 🍀js 8.  -->  
           <button type="submit" class="submit myButton">submit</button>
 
-          <button type="reset" class="reset myButton">reset</button>
-        </form>
+       
+        </div>
+      </section>
 
-      </div>
-    </section>
+      <section class="content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Options</th>
+            </tr>
+          </thead>
 
-    <section class="content">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Name</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>Options</th>
-          </tr>
-        </thead>
-
-        <tbody id="expensetable">
-          <!-- 🍉js로 만들 것
+          <tbody id="expensetable">
+            <!-- 🍉js로 만들 것
                 <tr class="tr_ui">
                     <td class='td_ui'>test</td>
                     <td>test</td>
@@ -90,15 +90,13 @@
                     delete button    
                                
                 </tr> -->
-                
-        </tbody>
-      </table>
-    </section>
+          </tbody>
+        </table>
+      </section>
 
-    <!-- 🍀 js.16. -->
-    <button type="submit" class="delete_all myButton">delete all</button>
-
-  </div>
+      <!-- 🍀 js.16. -->
+      <button type="submit" class="delete_all myButton">delete all</button>
+    </div>
 
     <script src="script.js"></script>
 
