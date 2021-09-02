@@ -12,15 +12,23 @@ let date = document.querySelector('#date');
 let amount = document.querySelector('#amount');
 let options = document.querySelector('#options');
 
+/*  */
+let typeValue =  [];
+let namedValue =  [];
+let dateValue = [];
+let amountValue =  [];
+let optionsValue =  [];
+
+let empty =[];
+
 
 /* 🍉js 6.
- 1 click,
- 2 value of input....take
- 3 create element on table
- 4. put values in element 
- 5. clear values
- */
-
+1 click,
+2 value of input....take
+3 create element on table
+4. put values in element 
+5. clear values
+*/
 
 // 🍀 value
 /*⚽ (hard-coding)
@@ -49,19 +57,11 @@ options.addEventListener("change", function() {
     optionsValue.push(input);
 }); */
 
-let typeValue =  [];
-let namedValue =  [];
-let dateValue = [];
-let amountValue =  [];
-let optionsValue =  [];
+function values(p_a,p_b) {
 
-let empty =[];
-
-function values(a,b) {
-
-    a.addEventListener("change", function() {
+    p_a.addEventListener("change", function() {
         let input = this.value;    
-        b.push(input);
+        p_b.push(input);
     });
    
 }
@@ -75,23 +75,12 @@ values(options, optionsValue);
 
 // 🍀js 8. submit
 
-submit.addEventListener('click',expense)
+submit.addEventListener('click',run)
 
-submit.addEventListener('keypress', (e)=> {
-    if (e.key==='enter') {
-        expense;        
-    }    
-})
-
-/* todoInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        todolist();
-    }
-}); */
 
 // 🍀js 10. submit-expense : when value is not empty.
 
- function expense(e) {
+ function run(e) {
     e.preventDefault();    
 
     // 🦄namedValue.length > 0 :: array가 empty 인지 아닌지 확인할때 .length 사용

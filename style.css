@@ -13,6 +13,18 @@ body {
   padding: 0 auto;
 }
 
+/* 🍀 table */
+/* 🍉css 02 : 🚀 table 가운데 정렬하기 */
+table {
+  width: 100%;
+}
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*  */
 .title {
   padding-top: 2rem;
   color: var(--naver-color);
@@ -32,6 +44,7 @@ body {
 }
 
 /* 🍀form  */
+/* 🦄grid */
 #expForm {
   display: grid;
   grid-template-areas:
@@ -66,17 +79,14 @@ body {
   padding: 5px 0px;
 }
 
-/* 🍀 table */
+#expForm input,
+#expForm select{
+ 
+ font-size: 1.2rem;
+ border-radius: 4px;
+}
 
-/* 🍉css 02 : 🚀 table 가운데 정렬하기 */
-table {
-  width: 100%;
-}
-th,
-td {
-  text-align: center;
-  vertical-align: middle;
-}
+
 
 /* 🍀myButton  */
 .myButton {
@@ -88,7 +98,7 @@ td {
   cursor: pointer;
   color: #ffffff;
 
-  font-size: 15px;
+  font-size: 1.2rem;
   padding: 6px 15px;
   text-decoration: none;
 }
