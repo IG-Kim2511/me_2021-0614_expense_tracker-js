@@ -159,16 +159,20 @@ submit.addEventListener('click',run)
         });
 
         /* 🦄reset();
-        각 value를 reset하는건 안통함. 전체 form을 reset해야함    */
-
-        expForm.reset();             
+        각 value를 reset하는건 안통함. 전체 form을 reset해야함
+        왜인지 reset만으로는 안에 저장된 value를 초기화 시키지 못함 👉namedValue등을 ""으로 초기화
+        */
+        expForm.reset();    
+        
+        namedValue='';
+        amountValue = "";         
     } else {
 
         //🍉 js 12, Change innerhtml and color for 1 seconds
         let secondTitleOriginal = secondTitle.innerHTML;
         let secondTitleOriginalColor = secondTitle.style.color;
 
-        secondTitle.innerHTML="fill up box please";
+        secondTitle.innerHTML="fill box up please";
         secondTitle.style.color="red";
    
         setTimeout(function(){
