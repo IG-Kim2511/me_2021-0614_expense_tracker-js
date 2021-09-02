@@ -21,6 +21,10 @@ let optionsValue =  [];
 
 let empty =[];
 
+/*  */
+
+const secondTitle = document.querySelector(".secondTitle");
+
 
 /* 🍉js 6.
 1 click,
@@ -81,6 +85,7 @@ submit.addEventListener('click',run)
 // 🍀js 10. submit-expense : when value is not empty.
 
  function run(e) {
+   
     e.preventDefault();    
 
     // 🦄namedValue.length > 0 :: array가 empty 인지 아닌지 확인할때 .length 사용
@@ -158,6 +163,20 @@ submit.addEventListener('click',run)
 
         expForm.reset();             
     } else {
+
+        //🍉 js 12, Change innerhtml and color for 1 seconds
+        let secondTitleOriginal = secondTitle.innerHTML;
+        let secondTitleOriginalColor = secondTitle.style.color;
+
+        secondTitle.innerHTML="fill up box please";
+        secondTitle.style.color="red";
+   
+        setTimeout(function(){
+            secondTitle.innerHTML=secondTitleOriginal;
+            secondTitle.style.color=secondTitleOriginalColor;
+       }, 1000);
+
+
         return null;        // 🦄return null
     }
 }
