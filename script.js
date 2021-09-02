@@ -22,8 +22,11 @@ let optionsValue =  [];
 let empty =[];
 
 /*  */
-
 const secondTitle = document.querySelector(".secondTitle");
+
+let reset = document.querySelector('.reset');
+
+const deleteAll= document.querySelector(".delete_all");
 
 
 /* 🍉js 6.
@@ -161,11 +164,14 @@ submit.addEventListener('click',run)
         /* 🦄reset();
         각 value를 reset하는건 안통함. 전체 form을 reset해야함
         왜인지 reset만으로는 안에 저장된 value를 초기화 시키지 못함 👉namedValue등을 ""으로 초기화
+
+        🌊2번째submit부터는 모두 빈칸이어도 submit가 계속 되는 현상
         */
-        expForm.reset();    
+       
+       expForm.reset();    
+          namedValue='';
+          amountValue = "";       
         
-        namedValue='';
-        amountValue = "";         
     } else {
 
         //🍉 js 12, Change innerhtml and color for 1 seconds
@@ -187,8 +193,6 @@ submit.addEventListener('click',run)
 
 //🍀 js.18. reset
 
-let reset = document.querySelector('.reset');
-
 reset.addEventListener('click',initiate);
 
 function initiate() {
@@ -201,8 +205,6 @@ function initiate() {
 
 
 //🍀 js.16. deleteAll button
-
-const deleteAll= document.querySelector(".delete_all");
 
 deleteAll.addEventListener('click',clearAll);
 
